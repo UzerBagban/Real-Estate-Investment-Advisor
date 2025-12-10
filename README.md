@@ -16,9 +16,11 @@ The application:
 This project uses the India Housing dataset (18,000+ property records) and includes complete workflows for:
 
 ✔ Data Cleaning
+
 ✔ Exploratory Data Analysis
-✔ Feature Engineering
+
 ✔ Streamlit UI Development
+
 ✔ End-to-end Deployment
 
 
@@ -95,8 +97,8 @@ The dashboard includes rich data visualizations:
 ### **1️⃣ Clone the Repository**
 
 ```
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/UzerBagban/Real-Estate-Investment-Advisor.git
+cd Real-Estate-Investment-Advisor
 ```
 
 ### **2️⃣ Install Dependencies**
