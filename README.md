@@ -1,19 +1,17 @@
 # 🏡 Real Estate Investment Advisor
 
 
-### *Predicting Property Profitability & Streamlit*
-
 
 ## 📌 Project Overview
 
-The **Real Estate Investment Advisor** is an end-to-end data science and machine learning project designed to help property buyers and investors make smarter decisions.
+The **Real Estate Investment Advisor** is an end-to-end data analytics project designed to help property buyers and investors make smarter decisions.
 
 The application:
 
 * Provides **city-wise, BHK-wise, price & area analytics**
 * Offers an interactive dashboard built using **Streamlit**
 
-This project uses the India Housing dataset (18,000+ property records) and includes complete workflows for:
+This project uses the India Housing dataset (25,000+ property records) and includes complete workflows for:
 
 ✔ Data Cleaning
 
