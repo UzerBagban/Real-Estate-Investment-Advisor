@@ -11,7 +11,7 @@ The application:
 * Provides **city-wise, BHK-wise, price & area analytics**
 * Offers an interactive dashboard built using **Streamlit**
 
-This project uses the India Housing dataset (25,000+ property records) and includes complete workflows for:
+This project uses the India Housing dataset (250000+ property records) and includes complete workflows for:
 
 ✔ Data Cleaning
 
