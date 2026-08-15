@@ -54,13 +54,21 @@ st.markdown("""
 
 class RealEstateDashboard:
     def __init__(self):
-        self.df = None
+        self.df: pd.DataFrame = pd.DataFrame()
         self.load_data()
     
     def load_data(self):
         """Load the cleaned data"""
         try:
             self.df = pd.read_csv('cleaned_india_housing_prices.csv')
+            # The stored 'Price_per_SqFt' is in lakhs-per-sqft (values ~0.03–0.66),
+            # which renders as "₹0" everywhere. Convert to rupees-per-sqft for
+            # realistic display (lakhs * 1,00,000 = rupees), while keeping
+            # Price_in_Lakhs untouched for the Lakhs-based filters/metrics.
+            if 'Price_per_SqFt' in self.df.columns and 'Size_in_SqFt' in self.df.columns:
+                self.df['Price_per_SqFt'] = (
+                    self.df['Price_in_Lakhs'] * 1_00_000 / self.df['Size_in_SqFt']
+                ).round(0)
             st.sidebar.success("✅ Data loaded successfully!")
         except FileNotFoundError:
             st.sidebar.error("❌ Data file not found. Please run data preprocessing first.")
@@ -655,7 +663,7 @@ class RealEstateDashboard:
         # Create heatmap
         fig = px.imshow(
             corr_matrix,
-            text_auto='.2f',
+            text_auto=True,
             aspect='auto',
             color_continuous_scale='RdBu_r',
             title='Correlation Matrix Heatmap',
@@ -817,6 +825,7 @@ class RealEstateDashboard:
             
             # Create chart based on selections
             if x_axis and y_axis:
+                fig = None
                 if chart_type == 'Scatter':
                     fig = px.scatter(
                         filtered_df,
@@ -896,7 +905,7 @@ class RealEstateDashboard:
                     )
                 
                 # Display the chart
-                if 'fig' in locals():
+                if fig is not None:
                     st.plotly_chart(fig, use_container_width=True)
     
     def display_insights_summary(self, filtered_df):
