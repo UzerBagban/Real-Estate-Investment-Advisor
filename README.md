@@ -27,7 +27,7 @@ This project uses the India Housing dataset (250000+ property records) and inclu
 ### **Languages & Libraries**
 
 * Python
-* Pandas, NumPy
+* Pandas, NumPy, PyArrow
 * Matplotlib, Seaborn, Plotly
 * Streamlit
 
@@ -35,6 +35,7 @@ This project uses the India Housing dataset (250000+ property records) and inclu
 
 * VS Code / Jupyter
 * GitHub
+* Git LFS (the 250K-row dataset is tracked via LFS)
 * Streamlit Cloud
 
 
@@ -50,6 +51,7 @@ Major preprocessing steps include:
   * Price_per_sqft
   * Age_of_property
   * Investment Score
+* Normalizing `Price_per_SqFt` to **rupees per sq. ft.** (the raw column was stored in lakhs-per-sqft and rendered as `₹0`; the dashboard recomputes it as `Price_in_Lakhs × 1,00,000 / Size_in_SqFt` on load, while keeping `Price_in_Lakhs` for the Lakhs-based filters and metrics)
 * Creating binary target for **Good Investment** classification
 
 
@@ -99,13 +101,29 @@ git clone https://github.com/UzerBagban/Real-Estate-Investment-Advisor.git
 cd Real-Estate-Investment-Advisor
 ```
 
-### **2️⃣ Install Dependencies**
+### **2️⃣ Create & Activate a Virtual Environment**
+
+It's recommended to install the dependencies inside an isolated virtual environment (Python 3.10+):
+
+**Windows (Git Bash / Command Prompt):**
+```
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+**macOS / Linux:**
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### **3️⃣ Install Dependencies**
 
 ```
 pip install -r requirements.txt
 ```
 
-### **3️⃣ Run the Streamlit App**
+### **4️⃣ Run the Streamlit App**
 
 ```
 streamlit run app.py

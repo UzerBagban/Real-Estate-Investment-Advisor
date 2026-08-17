@@ -1,4 +1,31 @@
 {
   "version": "0.2",
-  "words": ["sqft", "nbins", "vline", "viridis", "xaxes", "tickangle", "imshow", "selectbox", "histfunc"]
+  "words": [
+    "Bagban",
+    "Matplotlib",
+    "Plotly",
+    "PyArrow",
+    "Seaborn",
+    "Streamlit",
+    "Uzer",
+    "Venv",
+    "bagban",
+    "histfunc",
+    "imshow",
+    "matplotlib",
+    "nbins",
+    "plotly",
+    "pyarrow",
+    "seaborn",
+    "selectbox",
+    "sqft",
+    "streamlit",
+    "tickangle",
+    "uday",
+    "uzer",
+    "venv",
+    "viridis",
+    "vline",
+    "xaxes"
+  ]
 }
